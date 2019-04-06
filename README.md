@@ -1,5 +1,46 @@
 # Typescript with Babel and Webpack Starter kit for web
 
+## todo
+
+1. [] image handle
+
+2. [] media (such as _.mp3 , _.wav file) file-loader
+
+3. [] cdn publicPath handle
+
+4. [] dev/produciton mode split the config
+
+5. [] Compress JS (uglify-js)
+
+6. [] Compress Css (postcss, purgecss for remove unused css)
+7. [] Copy Webpack Plugin
+
+8. [] maybe add DefinePlugin
+9. [] maybe add the svg font handle
+
+## Quick Start
+
+1. clone the project
+
+```shell
+git clone https://github.com/CosPie/Typescript-with-Babel-and-Webpack-Starter-kit.git
+```
+
+2. install dependencies
+
+```shell
+npm install
+
+# or
+yarn install
+```
+
+3. run webpack-dev-server
+
+```shell
+npm run dev
+```
+
 ## Typescript
 
 1. Use babel-loader to transform `*.ts` file to `*.js` with no type-check , and then it can improved performance.
