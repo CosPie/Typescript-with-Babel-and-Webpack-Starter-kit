@@ -6,7 +6,8 @@
     "scripts": {
         "check-types": "tsc",
         "dev": "webpack-dev-server --config webpack.config.js",
-        "build": "webpack --mode production"
+        "build": "webpack --mode production",
+        "lint": "eslint src/ --ext .js,.ts "
     },
     "keywords": [],
     "author": "",
