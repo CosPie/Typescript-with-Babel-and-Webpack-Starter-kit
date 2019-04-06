@@ -17,6 +17,7 @@
 
 8. [] maybe add DefinePlugin
 9. [] maybe add the svg font handle
+10. [] cypress test suite.
 
 ## Quick Start
 
