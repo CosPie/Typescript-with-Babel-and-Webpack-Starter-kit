@@ -16,9 +16,9 @@
         // Import non-ES modules as default imports.
         "esModuleInterop": true,
 
-        "typeRoots": ["/typings"]
     },
     "include": [
-        "src"
+        "src",
+        "typings"
     ]
 }
