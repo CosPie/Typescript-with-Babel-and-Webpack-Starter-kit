@@ -35,6 +35,7 @@ module.exports = {
                 // Include ts, tsx, js, and jsx files.
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
+                include: [path.resolve(__dirname, 'src/ts')],
                 use: ['babel-loader'],
             },
         ],
