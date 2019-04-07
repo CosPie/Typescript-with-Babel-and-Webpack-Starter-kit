@@ -16,6 +16,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(png|jpg|gif)$/, //匹配所有格式的图片资源
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+            {
                 test: /\.scss$/,
                 // 因为这个插件需要干涉模块转换的内容，所以需要使用它对应的 loader
                 use: ExtractTextPlugin.extract({
