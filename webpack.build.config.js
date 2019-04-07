@@ -42,12 +42,24 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        // avoid import jquery lib in any *.ts
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html', // 配置输出文件名和路径
             template: './index.html', // 配置文件模板
         }),
         new ExtractTextPlugin('css/[name].css'),
     ],
+    externals: {
+        // excluding dependencies from the output bundles.
+        // use cdn script import lib .
+        jquery: '$',
+    },
     resolve: {
         modules: ['node_modules', path.resolve(__dirname, 'src')],
         extensions: ['.json', '.js', '.jsx', '.ts', '.tsx'],
