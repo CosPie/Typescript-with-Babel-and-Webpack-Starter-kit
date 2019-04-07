@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: path.resolve(__dirname, './src/ts/index.ts'),
     watch: true,
     output: {
@@ -28,7 +28,7 @@ module.exports = {
                 // 因为这个插件需要干涉模块转换的内容，所以需要使用它对应的 loader
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader'],
+                    use: ['css-loader', 'postcss-loader', 'sass-loader'],
                 }),
             },
             {
@@ -51,12 +51,5 @@ module.exports = {
     resolve: {
         modules: ['node_modules', path.resolve(__dirname, 'src')],
         extensions: ['.json', '.js', '.jsx', '.ts', '.tsx'],
-    },
-    devtool: 'source-maps',
-    devServer: {
-        // contentBase: path.join('/dist/'),
-        inline: true,
-        host: '127.0.0.1',
-        port: 5050,
     },
 };
