@@ -18,6 +18,7 @@
 8. [] maybe add DefinePlugin
 9. [] maybe add the svg font handle
 10. [] cypress test suite.
+11. [] dts gen tool
 
 ## Quick Start
 
@@ -60,8 +61,28 @@ I prefer to use Scss css-pre-processing rather than etc.(such as less).
 
 2. use eslint to format `*.ts` file to replace tslint.
 
+## Note
+
+1. Namespaces.
+
+Solution: don’t use them! They’re outdated. Use the industry standard ES6 modules (import / export) instead. The recommended tslint rules ensure namespaces are not used.
+
+2. Casting a type with the`<newtype>x`syntax.
+
+    Solution: Use x as newtype instead.
+
+3. Const enums.
+
+    This is a shame. Need to resort to regular enums for now.
+
+4. Legacy-style import / export syntax.
+
+    Examples: import foo = require(...) and export = foo.
+
 ## Inspire
 
 1. [GitHub - Microsoft/TypeScript-Babel-Starter](https://github.com/Microsoft/TypeScript-Babel-Starter)
 
-2) [Using ESLint and Prettier in a TypeScript Project](https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb)
+2. [Using ESLint and Prettier in a TypeScript Project](https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb)
+
+3. [TypeScript With Babel: A Beautiful Marriage](https://iamturns.com/typescript-babel/)
