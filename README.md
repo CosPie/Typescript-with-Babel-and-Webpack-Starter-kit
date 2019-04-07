@@ -43,6 +43,13 @@ yarn install
 npm run dev
 ```
 
+## DTO
+
+1. Install QuickType VSCODE ext
+2. create the dto `[name].json`
+3. open it and use QuickType generate interface
+4. copy/paste to the dto.d.ts
+
 ## Typescript
 
 1. Use babel-loader to transform `*.ts` file to `*.js` with no type-check , and then it can improved performance.
