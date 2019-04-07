@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const webpack = require('webpack');
 module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, './src/ts/index.ts'),
@@ -41,12 +41,24 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
+        // avoid import jquery lib in any *.ts
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html', // 配置输出文件名和路径
             template: './index.html', // 配置文件模板
         }),
         new ExtractTextPlugin('css/[name].css'),
     ],
+    externals: {
+        // excluding dependencies from the output bundles.
+        // if use cdn script import lib , uncomment the next lines.
+        // jquery: '$',
+    },
     resolve: {
         modules: ['node_modules', path.resolve(__dirname, 'src')],
         extensions: ['.json', '.js', '.jsx', '.ts', '.tsx'],
