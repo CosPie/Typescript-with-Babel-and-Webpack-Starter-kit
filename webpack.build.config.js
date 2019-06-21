@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = merge(common, {
@@ -22,5 +22,5 @@ module.exports = merge(common, {
             filename: 'index.html', // 配置输出文件名和路径
             template: './index.html', // 配置文件模板
         }),
-    ]
+    ],
 });
