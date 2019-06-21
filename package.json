@@ -44,6 +44,7 @@
     "dependencies": {
         "core-js": "3",
         "cssnano": "^4.1.10",
-        "postcss-scss": "^2.0.0"
+        "postcss-scss": "^2.0.0",
+        "webpack-merge": "^4.2.1"
     }
 }
